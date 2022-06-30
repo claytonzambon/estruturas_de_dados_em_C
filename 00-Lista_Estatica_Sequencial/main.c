@@ -19,25 +19,13 @@ int main(){
 			case 1:
 				if(lista_cheia(li))
                 {
-                    system("pause");
                     break;
                 } else {
-                    msg_digite_matricula();
-                    scanf("%d", &dados_aluno.matricula);
-                    msg_digite_nome();
-                    scanf("%s", dados_aluno.nome);
-                    msg_digite_nota(01);
-                    scanf("%f", &dados_aluno.n1);
-                    msg_digite_nota(02);
-                    scanf("%f", &dados_aluno.n2);
-                    msg_digite_nota(03);
-                    scanf("%f", &dados_aluno.n3);
+                    informar_dados_aluno(&dados_aluno); //Função para informar os dados do Aluno
                     if (insere_lista_final(li, dados_aluno)){
-                        printf("Elemento inserido com sucesso\n\n");
-                        system("pause");
+                        msg_inserido_com_sucesso();
                     } else {
-                        printf("Falha na insercao\n\n");
-                        system("pause");
+                        msg_falha_insercao();
                     }
                     break;
                 }
@@ -46,17 +34,12 @@ int main(){
                 {
                     break;
                 } else {
-                    msg_digite_matricula();
-                    scanf("%d", &dados_aluno.matricula);
-                    msg_digite_nome();
-                    scanf("%s", dados_aluno.nome);
-                    msg_digite_nota(01);
-                    scanf("%f", &dados_aluno.n1);
-                    msg_digite_nota(02);
-                    scanf("%f", &dados_aluno.n2);
-                    msg_digite_nota(03);
-                    scanf("%f", &dados_aluno.n3);
-                    insere_lista_inicio(li, dados_aluno);
+                    informar_dados_aluno(&dados_aluno); //Função para informar os dados do Aluno
+                    if (insere_lista_inicio(li, dados_aluno)){
+                        msg_inserido_com_sucesso();
+                    } else {
+                        msg_falha_insercao();
+                    }
                     break;
                 }
             case 3:
@@ -64,23 +47,17 @@ int main(){
                 {
                     break;
                 } else {
-                    msg_digite_matricula();
-                    scanf("%d", &dados_aluno.matricula);
-                    msg_digite_nome();
-                    scanf("%s", dados_aluno.nome);
-                    msg_digite_nota(01);
-                    scanf("%f", &dados_aluno.n1);
-                    msg_digite_nota(02);
-                    scanf("%f", &dados_aluno.n2);
-                    msg_digite_nota(03);
-                    scanf("%f", &dados_aluno.n3);
-                    insere_lista_ordenada(li, dados_aluno);
+                    informar_dados_aluno(&dados_aluno); //Função para informar os dados do Aluno
+                    if (insere_lista_ordenada(li, dados_aluno)){
+                        msg_inserido_com_sucesso();
+                    } else {
+                        msg_falha_insercao();
+                    }
                     break;
                 }
 			case 4:
 				if(lista_vazia(li))
                 {
-                    system("pause");
                     break;
                 } else {
                     remove_lista_final(li);
@@ -89,7 +66,6 @@ int main(){
             case 5:
 				if(lista_vazia(li))
                 {
-                    system("pause");
                     break;
                 } else {
                     remove_lista_inicio(li);
@@ -98,7 +74,6 @@ int main(){
 			case 6:
 				if(lista_vazia(li))
                 {
-                    system("pause");
                     break;
                 } else {
                     printf("\nDigite a matricula a ser removida: ");
@@ -109,19 +84,16 @@ int main(){
 			case 7:
 				if(lista_vazia(li))
                 {
-                    system("pause");
                     break;
                 } else {
                     printf("\nDigite a posicao a ser buscada: ");
                     scanf("%d", &posicao);
                     consulta_lista_pos(li, posicao, &dados_aluno);
-                    system("pause");
                     break;
                 }
             case 8:
 				if(lista_vazia(li))
                 {
-                    system("pause");
                     break;
                 } else {
                     printf("\nDigite a matricula a ser buscada: ");
@@ -132,21 +104,17 @@ int main(){
 			case 9:
 				if(lista_vazia(li))
                 {
-                    system("pause");
                     break;
                 } else {
                     imprime_lista(li);
-                    system("pause");
                     break;
                 }
             case 10:
 				if(lista_vazia(li))
                 {
-                    system("pause");
                     break;
                 } else {
                     printf("O tamanho da Lista eh: %d\n", tamanho_lista(li));
-                    system("pause");
                     break;
                 }
 			case 11:
@@ -155,9 +123,11 @@ int main(){
 				break;
             default:
                 printf("\n\nOpcao invalida\n\n");
-                system ("pause");
                 break;
 		}
+
+		printf("\n\n");
+		system("pause");
 		printf("\n\n");
 	} while(i == 1);
 

@@ -29,14 +29,10 @@ void menu()
 	printf("\nEscolha uma opcao para continuar >>: ");
 }
 
-void msg_digite_matricula(){
-    printf("Digite a Matricula: ");
+void msg_inserido_com_sucesso(){
+    printf("\n\n>>> Elemento inserido com sucesso <<<\n\n");
 }
 
-void msg_digite_nome(){
-    printf("Digite o nome: ");
-}
-
-void msg_digite_nota(int nota){
-    printf("Digite a Nota %d: ", nota);
+void msg_falha_insercao(){
+    printf("\n\n>>> Falha na insercao <<<\n\n");
 }

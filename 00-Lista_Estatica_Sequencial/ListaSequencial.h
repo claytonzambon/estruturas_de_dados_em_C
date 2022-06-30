@@ -10,6 +10,15 @@ struct aluno{
     char nome[30];
     float n1,n2,n3;
 };
+
+/*Implementando a Struct do tipo lista
+Controlador: ira controlar o tamanho da lista
+e a posição dos elementos*/
+struct lista{
+    int qtd;
+    struct aluno dados[MAX];
+};
+
 //Definindo uma struct Lista
 typedef struct lista Lista;
 
@@ -32,9 +41,8 @@ int consulta_lista_mat(Lista* li, int mat, struct aluno *al);
 void imprime_lista(Lista* li);
 
 void menu();
-void msg_digite_matricula();
-void msg_digite_nome();
-void msg_digite_nota(int nota);
+void msg_inserido_com_sucesso();
+void msg_falha_insercao();
 
 int remove_lista_otimizado(Lista* li, int mat);
 void exibe_consulta();
