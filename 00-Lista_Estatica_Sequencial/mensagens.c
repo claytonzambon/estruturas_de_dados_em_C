@@ -1,7 +1,7 @@
 //Arquivo mensagens.c
 #include <stdio.h>
 #include <stdlib.h>
-#include "ListaSequencial.h"
+#include "header.h"
 
 //Implementacao do MENU
 void menu()
@@ -30,9 +30,17 @@ void menu()
 }
 
 void msg_inserido_com_sucesso(){
-    printf("\n\n>>> Elemento inserido com sucesso <<<\n\n");
+    printf("\n\n>>> Elemento Inserido com sucesso <<<\n\n");
 }
 
 void msg_falha_insercao(){
-    printf("\n\n>>> Falha na insercao <<<\n\n");
+    printf("\n\n>>> Falha na Insercao <<<\n\n");
+}
+
+void msg_removido_com_sucesso(){
+    printf("\n\n>>> Elemento Removido com Sucesso <<<\n\n");
+}
+
+void msg_falha_remocao(){
+    printf("\n\n>>> Falha na Remocao <<<\n\n");
 }

@@ -1,10 +1,13 @@
 //Arquivo searchs.c
 #include <stdio.h>
 #include <stdlib.h>
-#include "ListaSequencial.h" //inclui os Protótipos
+#include "header.h" //inclui os Protótipos
 
 //Implementando a funcao consulta_lista_pos
 int consulta_lista_pos(Lista* li, int pos, struct aluno *al){
+    if (lista_vazia(li))
+        return 0;
+
     if(li == NULL || pos <= 0 ||  pos > li->qtd)
     {
         printf("\nPosicao inexistente\n");
@@ -22,8 +25,9 @@ int consulta_lista_pos(Lista* li, int pos, struct aluno *al){
 }
 //Implementando a funcao consulta_lista_mat
 int consulta_lista_mat(Lista* li, int mat, struct aluno *al){
-    if(li == NULL)
+    if (lista_vazia(li))
         return 0;
+
     int i = 0;
     while(i<li->qtd && li->dados[i].matricula != mat)
         i++;
@@ -44,11 +48,9 @@ int consulta_lista_mat(Lista* li, int mat, struct aluno *al){
 }
 //Implementacao para exibir a lista
 void imprime_lista(Lista* li){
-    if(li == NULL || li->qtd == 0)
-    {
-        printf("\nLista Vazia ou invalida\n");
+    if (lista_vazia(li))
         return 0;
-    }
+
     int i;
     printf("-------------------------------\n");
     for(i=0; i< li->qtd; i++){

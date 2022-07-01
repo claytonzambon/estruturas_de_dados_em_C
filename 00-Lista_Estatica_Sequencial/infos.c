@@ -1,7 +1,7 @@
-//Arquivo ListaSequencial.c
+//Arquivo infos.c
 #include <stdio.h>
 #include <stdlib.h>
-#include "ListaSequencial.h" //inclui os Protótipos
+#include "header.h" //inclui os Protótipos
 
 //Implementando a função criar lista
 Lista* cria_lista(){
@@ -17,16 +17,6 @@ Lista* cria_lista(){
 void libera_lista(Lista* li){
     free(li);
 }
-
-
-//Implementando a funcao Tamanho da lista
-int tamanho_lista(Lista* li){
-    if(li == NULL)
-        return -1;
-    else
-        return li->qtd;
-}
-
 
 //Implementando a funcao lista Cheia
 int lista_cheia(Lista* li){
@@ -57,4 +47,12 @@ int lista_vazia(Lista* li){
         return (li->qtd == 0);
     }
     return 0;
+}
+
+//Implementando a funcao Tamanho da lista
+int tamanho_lista(Lista* li){
+    if (lista_vazia(li))
+        return 0;
+    else
+        return li->qtd;
 }

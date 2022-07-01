@@ -1,7 +1,7 @@
 //Arquivo inserts.c
 #include <stdio.h>
 #include <stdlib.h>
-#include "ListaSequencial.h" //inclui os Protótipos
+#include "header.h" //inclui os Protótipos
 
 Lista* informar_dados_aluno(struct aluno *al){
     printf("Digite a Matricula: ");
@@ -19,13 +19,10 @@ Lista* informar_dados_aluno(struct aluno *al){
 
 //Implementando a funcao insere_lista_final
 int insere_lista_final(Lista* li, struct aluno al){
-    if(li == NULL)
+    if (lista_cheia(li))
         return 0;
-    if(li->qtd == MAX)//lista cheia
-    {
-        printf("\nLista Cheia\n");
-        return 0;
-    }
+
+    informar_dados_aluno(&al);
     li->dados[li->qtd] = al;
     li->qtd++;
     return 1;
@@ -34,13 +31,10 @@ int insere_lista_final(Lista* li, struct aluno al){
 
 //Implementando a funcao insere_lista_inicio
 int insere_lista_inicio(Lista* li, struct aluno al){
-    if(li == NULL)
+    if (lista_cheia(li))
         return 0;
-    if(li->qtd == MAX)//lista cheia
-    {
-        printf("\nLista Cheia\n");
-        return 0;
-    }
+
+    informar_dados_aluno(&al);
     int i;
     for(i=li->qtd-1; i>=0; i--)
         li->dados[i+1] = li->dados[i];
@@ -52,13 +46,10 @@ int insere_lista_inicio(Lista* li, struct aluno al){
 
 //Implementando a funcao insere_lista_ordenada
 int insere_lista_ordenada(Lista* li, struct aluno al){
-    if(li == NULL)
+    if (lista_cheia(li))
         return 0;
-    if(li->qtd == MAX)//lista cheia
-    {
-        printf("\nLista Cheia\n");
-        return 0;
-    }
+
+    informar_dados_aluno(&al);
     int k,i = 0;
     while(i<li->qtd && li->dados[i].matricula < al.matricula)
         i++;
