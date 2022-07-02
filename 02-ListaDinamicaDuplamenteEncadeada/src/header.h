@@ -1,6 +1,5 @@
 //Arquivo header.h
 //Tamanho que será nosso vetor
-#define MAX 3
 
 /*Definindo um Tipo Aluno
 Elementos da Lista: desta forma será possível guardar
@@ -14,15 +13,16 @@ typedef struct aluno{
 /*Implementando a Struct do tipo lista
 Controlador: ira controlar o tamanho da lista
 e a posição dos elementos*/
-//Definição do tipo lista com um ponteiro *prox para fazer o encadeamento
+//Definição do tipo lista com DOIS ponteiros *ant e *prox para fazer o Duplo Encadeamento
 struct elemento{
-    st_aluno dados;
+    struct elemento *ant;
+    struct aluno dados;
     struct elemento *prox;
 };
+typedef struct elemento Elem;
 
 //Definindo uma struct Lista
 typedef struct elemento* Lista;
-typedef struct elemento Elem;
 
 //Declaração de uma Struct para armazenar e inserir os elementos
 st_aluno dados_aluno;

@@ -9,20 +9,18 @@ typedef struct aluno{
     int matricula;
     char nome[30];
     float n1,n2,n3;
-}st_aluno;
+}st_aluno;;
 
 /*Implementando a Struct do tipo lista
 Controlador: ira controlar o tamanho da lista
 e a posição dos elementos*/
-//Definição do tipo lista com um ponteiro *prox para fazer o encadeamento
-struct elemento{
-    st_aluno dados;
-    struct elemento *prox;
+struct lista{
+    int qtd;
+    struct aluno dados[MAX];
 };
 
 //Definindo uma struct Lista
-typedef struct elemento* Lista;
-typedef struct elemento Elem;
+typedef struct lista Lista;
 
 //Declaração de uma Struct para armazenar e inserir os elementos
 st_aluno dados_aluno;
@@ -38,7 +36,6 @@ int lista_vazia(Lista* li);
 int insere_lista_final(Lista* li, struct aluno al);
 int insere_lista_inicio(Lista* li, struct aluno al);
 int insere_lista_ordenada(Lista* li, struct aluno al);
-st_aluno informar_dados_aluno();
 
 //Funçõesdo arquivo removes.c
 int remove_lista_final(Lista* li);
@@ -50,10 +47,9 @@ void msg_falha_remocao();
 //Funções do arquivo searches.c
 int consulta_lista_pos(Lista* li, int pos, struct aluno *al);
 int consulta_lista_mat(Lista* li, int mat, struct aluno *al);
-void imprime_lista(Lista* li, struct aluno *al);
+void imprime_lista(Lista* li);
 
 //Funções do arquivo mensagens.c
 void menu();
 void msg_inserido_com_sucesso();
 void msg_falha_insercao();
-void exibe_consulta(struct aluno *al);

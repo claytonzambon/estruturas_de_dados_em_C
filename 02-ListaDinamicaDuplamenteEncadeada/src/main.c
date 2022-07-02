@@ -1,10 +1,10 @@
 /*
  ============================================================================
- Name        : 01-ListaDinamicaEncadeada.c
+ Name        : 02-ListaDinamicaDuplamenteEncadeada.c
  Author      : Clayton Zambon
  Version     :
  Copyright   : Clayton Zambon
- Description : Hello World in C, Ansi-style
+ Description : Lista Dinâmica Duplamente Encadeada in C, Ansi-style
  ============================================================================
  */
 

@@ -1,10 +1,10 @@
 /*
  ============================================================================
- Name        : 01-ListaDinamicaEncadeada.c
+ Name        : 03-ListaDinamicaEncadeadaCircular.c
  Author      : Clayton Zambon
  Version     :
  Copyright   : Clayton Zambon
- Description : Hello World in C, Ansi-style
+ Description : Lista Dinâmica Encadeada Circular, Ansi-style
  ============================================================================
  */
 
@@ -103,3 +103,4 @@ int main(){
     printf("\n\n\n\n");
     return EXIT_SUCCESS;
 }
+

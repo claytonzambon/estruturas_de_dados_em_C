@@ -1,13 +1,12 @@
 /*
  ============================================================================
- Name        : 01-ListaDinamicaEncadeada.c
+ Name        : 00-ListaEstaticaSequencial.c
  Author      : Clayton Zambon
  Version     :
- Copyright   : Clayton Zambon
+ Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
  ============================================================================
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -80,13 +79,13 @@ int main(){
                 consulta_lista_mat(li, matricula_aluno, &dados_aluno);
                 break;
 			case 9:
-				imprime_lista(li, &dados_aluno);
+                imprime_lista(li);
                 break;
             case 10:
                 printf("O tamanho da Lista eh: %d\n", tamanho_lista(li));
                 break;
 			case 11:
-				printf("\n\n\t\t Ate logo !!\n\n\n\n\n\n\n\n\n\n");
+				printf("\n\n\t\t\Ate logo !!\n\n\n\n\n\n\n\n\n\n");
 				i=0;
 				break;
             default:
