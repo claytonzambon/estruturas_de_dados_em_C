@@ -30,7 +30,10 @@ local.properties
 *.pydevproject
 
 # CDT-specific (C/C++ Development Tooling)
+Debug/
 .cproject
+.project
+.settings
 
 # CDT- autotools
 .autotools
@@ -73,4 +76,4 @@ local.properties
 # Spring Boot Tooling
 .sts4-cache/
 
-# End of https://www.toptal.com/developers/gitignore/api/eclipse
+# End of 
