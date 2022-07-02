@@ -30,10 +30,11 @@ local.properties
 *.pydevproject
 
 # CDT-specific (C/C++ Development Tooling)
+.settings/
 Debug/
 .cproject
 .project
-.settings
+
 
 # CDT- autotools
 .autotools
