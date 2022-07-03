@@ -7,7 +7,6 @@ int consulta_topo_pilha(Pilha* pi, struct aluno al){
 	if (pilha_vazia(pi))
 		return 0;
 
-    //*al = pi->dados[pi->qtd-1];
     exibe_consulta(pi->dados[pi->qtd-1]);
     return 1;
 }
