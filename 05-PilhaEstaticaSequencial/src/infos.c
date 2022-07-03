@@ -34,7 +34,7 @@ int pilha_cheia(Pilha* pi){
     }
 
     if (pi->qtd == MAX){
-    	printf("\Pilha Cheia\n");
+    	printf("\nPilha Cheia\n");
     	return (pi->qtd == MAX);
     }
     return 1;
@@ -43,12 +43,12 @@ int pilha_cheia(Pilha* pi){
 int pilha_vazia(Pilha* pi){
     if(pi == NULL){
     	printf("\nPilha Invalida\n");
-    	return 0;
+    	return 1;
     }
 
     if (pi->qtd == 0){
     	printf("\nLista Vazia\n");
     	return (pi->qtd == 0);
     }
-    return 1;
+    return 0;
 }

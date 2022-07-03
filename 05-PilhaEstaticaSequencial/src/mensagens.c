@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "header.h"
 
+//Ler os dados do aluno digitado pelo usuario
 st_aluno informar_dados_aluno(){
 	st_aluno al;
     printf("Digite a Matricula: ");
@@ -29,10 +30,10 @@ void menu()
 	printf("\n#                                              #");
 	printf("\n#	 1 = Inserir elemento na Pilha         #");
 	printf("\n#	 2 = Remover elemento da Pilha         #");
-	printf("\n#	 3 = Consultar elemento da Pilha   #");
-	printf("\n#	 4 = Exibir a Pilha                      #");
-	printf("\n#	 5 = Exibir Tamanho da Pilha          #");
-	printf("\n#	 6 = Sair                             #");
+	printf("\n#	 3 = Consultar elemento da Pilha       #");
+	printf("\n#	 4 = Exibir a Pilha                    #");
+	printf("\n#	 5 = Exibir Tamanho da Pilha           #");
+	printf("\n#	 6 = Sair                              #");
 	printf("\n#                                              #");
 	printf("\n################################################");
 	printf("\n\n");

@@ -31,7 +31,6 @@ int consulta_topo_pilha(Pilha* pi, struct aluno al);
 void imprime_pilha(Pilha* pi, struct aluno al);
 
 //Funções do arquivo inserts.c
-
 int insere_pilha(Pilha* pi, struct aluno al);
 
 //Funções do arquivo removes.c
