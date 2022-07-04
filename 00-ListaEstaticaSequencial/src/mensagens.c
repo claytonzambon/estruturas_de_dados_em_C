@@ -29,6 +29,22 @@ void menu()
 	printf("\nEscolha uma opcao para continuar >>: ");
 }
 
+//Ler dados do Aluno informados pelo usuario
+st_aluno informar_dados_aluno(){
+	st_aluno al;
+    printf("Digite a Matricula: ");
+    scanf("%d", &al.matricula);
+    printf("Digite o nome: ");
+    scanf("%s", al.nome);
+    printf("Digite a Nota 01: ");
+    scanf("%f", &al.n1);
+    printf("Digite a Nota 02: ");
+    scanf("%f", &al.n2);
+    printf("Digite a Nota 03: ");
+    scanf("%f", &al.n3);
+    return al;
+}
+
 void msg_inserido_com_sucesso(){
     printf("\n\n>>> Elemento Inserido com sucesso <<<\n\n");
 }
@@ -45,3 +61,42 @@ void msg_falha_remocao(){
     printf("\n\n>>> Falha na Remocao <<<\n\n");
 }
 
+int remover_matricula(){
+	int matricula = 0;
+    printf("\nDigite a matricula a ser removida: ");
+    scanf("%d", &matricula);
+    return matricula;
+}
+
+void msg_matricula_nao_encontrada(int matricula){
+	printf("\nMatricula >>%d<< nao encontrada \n", matricula);
+}
+
+void msg_matricula_removida(int matricula){
+	printf("\nRemovida a matricula >>%d<< da lista", matricula);
+}
+
+int msg_consulta_posicao(){
+	int posicao = 0;
+    printf("\nDigite a posicao a ser buscada: ");
+    scanf("%d", &posicao);
+    return posicao;
+}
+
+int msg_consulta_matricula(){
+	int matricula = 0;
+	printf("\nDigite a matricula a ser buscada: ");
+	scanf("%d", &matricula);
+	return matricula;
+}
+
+void exibe_consulta(struct aluno *al){
+    printf("-------------------------------\n");
+    printf("Matricula: %d\n", al->matricula);
+    printf("Nome: %s\n",  al->nome);
+    printf("Notas: %.2f %.2f %.2f\n",
+    		al->n1,
+            al->n2,
+            al->n3);
+    printf("-------------------------------\n");
+}
