@@ -13,7 +13,7 @@ void consulta_lista_pos(Lista* li, struct aluno *al){
 
 		if(li == NULL || posicao <= 0 ||  posicao > li->qtd)
 		{
-			printf("\nPosicao inexistente\n");
+			printf("\nPosição inexistente\n");
 
 		}
 		*al = li->dados[posicao-1];
@@ -34,7 +34,7 @@ void consulta_lista_mat(Lista* li, struct aluno *al){
 
 		if(i == li->qtd)//elemento nao encontrado
 		{
-			printf("\nMatricula nao encontrada\n");
+			printf("\nMatrícula não encontrada\n");
 		}
 		*al = li->dados[i];
 		exibe_consulta(al);
@@ -50,7 +50,7 @@ void imprime_lista(Lista* li){
         printf("-------------------------------\n");
 
         for(int i=0; i< li->qtd; i++){
-            printf("Matricula: %d\n",li->dados[i].matricula);
+            printf("Matrícula: %d\n",li->dados[i].matricula);
             printf("Nome: %s\n",li->dados[i].nome);
             printf("Notas: %.2f %.2f %.2f\n",
                    li->dados[i].n1,

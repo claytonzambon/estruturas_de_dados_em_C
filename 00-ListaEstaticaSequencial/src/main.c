@@ -10,9 +10,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 #include "header.h"
 
 int main(){
+	setlocale(LC_ALL, "");
+
     Lista* li = cria_lista();
     int opcao;
 	int i = 1;
@@ -49,14 +52,14 @@ int main(){
                 imprime_lista(li);
                 break;
             case 10:
-                printf("O tamanho da Lista eh: %d\n", tamanho_lista(li));
+                printf("O tamanho da Lista é: %d\n", tamanho_lista(li));
                 break;
 			case 11:
-				printf("\n\n\t\t Ate logo !!\n\n\n\n\n\n\n\n\n\n");
+				printf("\n\n\t\t Até logo !!\n\n\n\n\n\n\n\n\n\n");
 				i=0;
 				break;
             default:
-                printf("\n\nOpcao invalida\n\n");
+                printf("\n\nOpcao inválida\n\n");
                 break;
 		}
 

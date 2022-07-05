@@ -22,7 +22,7 @@ void libera_lista(Lista* li){
 int lista_cheia(Lista* li){
     if(li == NULL)
     {
-        printf("\nLista invalida\n");
+        printf("\nLista inválida\n");
         return -1;
     }
     if (li->qtd == MAX)
@@ -38,7 +38,7 @@ int lista_cheia(Lista* li){
 int lista_vazia(Lista* li){
     if(li == NULL)
     {
-        printf("\nLista Invalida\n");
+        printf("\nLista Inválida\n");
         return -1;
     }
     if(li->qtd == 0)
