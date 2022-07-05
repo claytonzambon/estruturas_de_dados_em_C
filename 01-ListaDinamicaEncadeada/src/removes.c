@@ -4,60 +4,65 @@
 #include "header.h" //inclui os Protótipos
 
 //Implementação da Função remove_lista_inicio
-int remove_lista_inicio(Lista* li){
-    if (lista_vazia(li))
-        return 0;
-
-    Elem *no = *li;
-    *li = no->prox;
-    free(no);
-    return 1;
+void remove_lista_inicio(Lista* li){
+    if (lista_vazia(li)){
+    	msg_falha_remocao(); //mensagens.c
+    }
+    else {
+		Elem *no = *li;
+		*li = no->prox;
+		free(no);
+		msg_removido_com_sucesso(); //mensagens.c
+    }
 }
 
 //Implementação da Função remove_lista_final
-int remove_lista_final(Lista* li){
-    if (lista_vazia(li))
-        return 0;
-
-    Elem *ant, *no = *li;
-    while(no->prox != NULL){
-        ant = no;
-        no = no->prox;
+void remove_lista_final(Lista* li){
+    if (lista_vazia(li)){
+    	msg_falha_remocao(); //mensagens.c
     }
+    else {
+		Elem *ant, *no = *li;
+		while(no->prox != NULL){
+			ant = no;
+			no = no->prox;
+		}
 
-    if(no == (*li)) { //remover o primeiro?
-        *li = no->prox;
-
-    } else {
-        ant->prox = no->prox;
-
+		if(no == (*li)) { //remover o primeiro?
+			*li = no->prox;
+		} else {
+			ant->prox = no->prox;
+		}
+		free(no);
+		msg_removido_com_sucesso(); //mensagens.c
     }
-    free(no);
-    return 1;
 }
 
 //Implementação da Função remove_lista
-int remove_lista(Lista* li, int mat){
-    if (lista_vazia(li))
-        return 0;
+void remove_lista(Lista* li){
+    if (lista_vazia(li)){
+    	msg_falha_remocao(); //mensagens.c
+    }
+    else {
 
-    Elem *ant, *no = *li;
-    while(no != NULL && no->dados.matricula != mat){
-        ant = no;
-        no = no->prox;
-    }
-    if(no == NULL){ //não encontrado
-    	printf("\nMatricula >>%d<< nao encontrada \n", mat);
-        return 0;
-    }
+    	int matricula = remover_matricula(); //mensagens.c
 
-    if(no == *li){ //remover o primeiro?
-        *li = no->prox;
-        printf("\nRemovida a matricula >>%d<< da lista", mat);
-    } else {
-        ant->prox = no->prox;
-        printf("\nRemovida a matricula >>%d<< da lista", mat);
+		Elem *ant, *no = *li;
+		while(no != NULL && no->dados.matricula != matricula){
+			ant = no;
+			no = no->prox;
+		}
+		if(no == NULL){ //não encontrado
+			msg_matricula_nao_encontrada(matricula); //mensagens.c
+		}
+
+		if(no == *li){ //remover o primeiro?
+			*li = no->prox;
+			msg_matricula_removida(matricula);  //mensagens.c
+		} else {
+			ant->prox = no->prox;
+			msg_matricula_removida(matricula);  //mensagens.c
+		}
+		free(no);
     }
-    free(no);
-    return 1;
 }

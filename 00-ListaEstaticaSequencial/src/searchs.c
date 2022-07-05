@@ -14,7 +14,6 @@ void consulta_lista_pos(Lista* li, struct aluno *al){
 		if(li == NULL || posicao <= 0 ||  posicao > li->qtd)
 		{
 			printf("\nPosição inexistente\n");
-
 		}
 		*al = li->dados[posicao-1];
 		exibe_consulta(al);
