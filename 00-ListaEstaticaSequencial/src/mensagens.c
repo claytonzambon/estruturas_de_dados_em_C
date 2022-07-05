@@ -32,7 +32,7 @@ void menu()
 //Ler dados do Aluno informados pelo usuario
 st_aluno informar_dados_aluno(){
 	st_aluno al;
-    printf("Digite a Matrícula: ");
+    printf("\n\nDigite a Matrícula: ");
     scanf("%d", &al.matricula);
     printf("Digite o nome: ");
     scanf("%s", al.nome);
@@ -42,7 +42,13 @@ st_aluno informar_dados_aluno(){
     scanf("%f", &al.n2);
     printf("Digite a Nota 03: ");
     scanf("%f", &al.n3);
+    printf("Digite a Nota 04: ");
+    scanf("%f", &al.n4);
     return al;
+}
+
+void msg_tamanho_lista(int tamanho){
+	printf("\n\nO tamanho da Lista é: %d\n", tamanho);
 }
 
 void msg_inserido_com_sucesso(){
@@ -63,7 +69,7 @@ void msg_falha_remocao(){
 
 int remover_matricula(){
 	int matricula = 0;
-    printf("\nDigite a matrícula a ser removida: ");
+    printf("\n\nDigite a matrícula a ser removida: ");
     scanf("%d", &matricula);
     return matricula;
 }
@@ -85,7 +91,7 @@ int msg_consulta_posicao(){
 
 int msg_consulta_matricula(){
 	int matricula = 0;
-	printf("\nDigite a matrícula a ser buscada: ");
+	printf("\n\nDigite a matrícula a ser buscada: ");
 	scanf("%d", &matricula);
 	return matricula;
 }
@@ -94,9 +100,11 @@ void exibe_consulta(struct aluno *al){
     printf("-------------------------------\n");
     printf("Matrícula: %d\n", al->matricula);
     printf("Nome: %s\n",  al->nome);
-    printf("Notas: %.2f %.2f %.2f\n",
+    printf("Notas: "
+    		"N1: %.2f - N2: %.2f - N3: %.2f - N4: %.2f\n",
     		al->n1,
             al->n2,
-            al->n3);
+            al->n3,
+			al->n4);
     printf("-------------------------------\n");
 }

@@ -52,7 +52,7 @@ int main(){
                 imprime_lista(li);
                 break;
             case 10:
-                printf("O tamanho da Lista é: %d\n", tamanho_lista(li));
+                tamanho_lista(li);
                 break;
 			case 11:
 				printf("\n\n\t\t Até logo !!\n\n\n\n\n\n\n\n\n\n");

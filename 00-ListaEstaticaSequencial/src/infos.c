@@ -50,9 +50,11 @@ int lista_vazia(Lista* li){
 }
 
 //Implementando a funcao Tamanho da lista
-int tamanho_lista(Lista* li){
-    if (lista_vazia(li))
-        return 0;
-    else
-        return li->qtd;
+void tamanho_lista(Lista* li){
+    if (lista_vazia(li)){
+        //Exibe mensagem da função lista_vazia
+    }
+    else {
+        msg_tamanho_lista(li->qtd);
+    }
 }

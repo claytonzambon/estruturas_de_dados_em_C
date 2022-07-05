@@ -47,16 +47,11 @@ void imprime_lista(Lista* li){
     	//Exibe mensagem da função lista_vazia(li)
     }
     else {
-        printf("-------------------------------\n");
 
+    	st_aluno *al = li->dados;
         for(int i=0; i< li->qtd; i++){
-            printf("Matrícula: %d\n",li->dados[i].matricula);
-            printf("Nome: %s\n",li->dados[i].nome);
-            printf("Notas: %.2f %.2f %.2f\n",
-                   li->dados[i].n1,
-                   li->dados[i].n2,
-                   li->dados[i].n3);
-            printf("-------------------------------\n");
+        	*al = li->dados[i];
+        	exibe_consulta(al);
         }
     }
 }
