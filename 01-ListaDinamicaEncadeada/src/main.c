@@ -26,25 +26,13 @@ int main(){
         scanf("%d", &opcao);
 		switch(opcao) {
 			case 1:
-                if (insere_lista_final(li, dados_aluno)){
-                    msg_inserido_com_sucesso();
-                } else {
-                    msg_falha_insercao();
-                }
+                insere_lista_final(li, dados_aluno);
                 break;
             case 2:
-                if (insere_lista_inicio(li, dados_aluno)){
-                    msg_inserido_com_sucesso();
-                } else {
-                    msg_falha_insercao();
-                }
+                insere_lista_inicio(li, dados_aluno);
                 break;
             case 3:
-                if (insere_lista_ordenada(li, dados_aluno)){
-                    msg_inserido_com_sucesso();
-                } else {
-                    msg_falha_insercao();
-                }
+                insere_lista_ordenada(li, dados_aluno);
                 break;
 			case 4:
 			    if (remove_lista_final(li)){

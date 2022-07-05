@@ -29,6 +29,21 @@ void menu()
 	printf("\nEscolha uma opcao para continuar >>: ");
 }
 
+st_aluno informar_dados_aluno(){
+	st_aluno al;
+    printf("Digite a Matricula: ");
+    scanf("%d", &al.matricula);
+    printf("Digite o nome: ");
+    scanf("%s", al.nome);
+    printf("Digite a Nota 01: ");
+    scanf("%f", &al.n1);
+    printf("Digite a Nota 02: ");
+    scanf("%f", &al.n2);
+    printf("Digite a Nota 03: ");
+    scanf("%f", &al.n3);
+    return al;
+}
+
 void msg_inserido_com_sucesso(){
     printf("\n\n>>> Elemento Inserido com sucesso <<<\n\n");
 }

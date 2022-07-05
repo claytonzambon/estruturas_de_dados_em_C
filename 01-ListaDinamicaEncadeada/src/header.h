@@ -35,10 +35,9 @@ int lista_cheia(Lista* li);
 int lista_vazia(Lista* li);
 
 //Funções do arquivo inserts.c
-int insere_lista_final(Lista* li, struct aluno al);
-int insere_lista_inicio(Lista* li, struct aluno al);
-int insere_lista_ordenada(Lista* li, struct aluno al);
-st_aluno informar_dados_aluno();
+void insere_lista_inicio(Lista* li, struct aluno al);
+void insere_lista_final(Lista* li, struct aluno al);
+void insere_lista_ordenada(Lista* li, struct aluno al);
 
 //Funçõesdo arquivo removes.c
 int remove_lista_final(Lista* li);
@@ -54,6 +53,7 @@ void imprime_lista(Lista* li, struct aluno *al);
 
 //Funções do arquivo mensagens.c
 void menu();
+st_aluno informar_dados_aluno();
 void msg_inserido_com_sucesso();
 void msg_falha_insercao();
 void exibe_consulta(struct aluno *al);

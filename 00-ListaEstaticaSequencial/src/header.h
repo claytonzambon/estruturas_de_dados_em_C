@@ -33,8 +33,8 @@ int lista_cheia(Lista* li);
 int lista_vazia(Lista* li);
 
 //Funções do arquivo inserts.c
-void insere_lista_final(Lista* li, struct aluno al);
 void insere_lista_inicio(Lista* li, struct aluno al);
+void insere_lista_final(Lista* li, struct aluno al);
 void insere_lista_ordenada(Lista* li, struct aluno al);
 
 //Funçõesdo arquivo removes.c
