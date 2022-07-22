@@ -25,17 +25,19 @@ void libera_lista(Lista* li){
 }
 
 //Implementação da Função que retorna o tamanho da Lista
-int tamanho_lista(Lista* li){
-    if(li == NULL)
-        return 0;
+void tamanho_lista(Lista* li){
+    if (lista_vazia(li)){
+        //Exibe mensagem da função lista_vazia
+    } else {
 
-    int cont = 0;
-    Elem* no = *li; //nó auxiliar
-    while(no != NULL){
-        cont++;
-        no = no->prox;
+		int cont = 0;
+		Elem* no = *li; //nó auxiliar
+		while(no != NULL){
+			cont++;
+			no = no->prox;
+		}
+		msg_tamanho_lista(cont);
     }
-    return cont;
 }
 
 //Implementação da Função lista_vazia

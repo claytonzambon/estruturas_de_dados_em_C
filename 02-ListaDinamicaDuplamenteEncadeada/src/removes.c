@@ -4,10 +4,10 @@
 #include "header.h" //inclui os Protótipos
 
 //Implementação da funcao remove_lista_inicio
-int remove_lista_inicio(Lista* li){
+void remove_lista_inicio(Lista* li){
 
     if (lista_vazia(li))
-        return 0;
+    	msg_falha_remocao(); //mensagens.c
 
     Elem *no = *li;
     *li = no->prox;
@@ -16,13 +16,13 @@ int remove_lista_inicio(Lista* li){
         no->prox->ant = NULL;
 
     free(no);
-    return 1;
+    msg_removido_com_sucesso(); //mensagens.c
 }
 //Implementação da funcao remove_lista_final
-int remove_lista_final(Lista* li){
+void remove_lista_final(Lista* li){
 
     if (lista_vazia(li))
-        return 0;
+    	msg_falha_remocao(); //mensagens.c
 
     Elem *no = *li;
 
@@ -36,34 +36,37 @@ int remove_lista_final(Lista* li){
 
     free(no);
 
-    return 1;
+    msg_removido_com_sucesso(); //mensagens.c
 }
 //Implementação da funcao remove_lista
-int remove_lista(Lista* li, int mat){
+void remove_lista(Lista* li, int mat){
 
-    if (lista_vazia(li))
-        return 0;
+    if (lista_vazia(li)){
+    	msg_falha_remocao(); //mensagens.c
+    } else {
+    	int matricula = remover_matricula(); //mensagens.c
 
-    Elem *no = *li;
+    	Elem *no = *li;
 
-    while(no != NULL && no->dados.matricula != mat){
-        no = no->prox;
+    	while(no != NULL && no->dados.matricula != mat){
+    		no = no->prox;
+    	}
+
+    	if(no == NULL){//não encontrado
+    	    msg_matricula_nao_encontrada(matricula); //mensagens.c
+    	}
+
+    	if(no->ant == NULL)//remover o primeiro?
+    	    *li = no->prox;
+    	else
+    	    no->ant->prox = no->prox;
+
+    	if(no->prox != NULL)//não é o último?
+    	    no->prox->ant = no->ant;
+
+    	free(no);
+    	msg_matricula_removida(matricula);  //mensagens.c
     }
 
-    if(no == NULL){//não encontrado
-    	printf("\nMatricula >>%d<< nao encontrada \n", mat); //mensagens.c
-        return 0;
-    }
 
-    if(no->ant == NULL)//remover o primeiro?
-        *li = no->prox;
-    else
-        no->ant->prox = no->prox;
-
-    if(no->prox != NULL)//não é o último?
-        no->prox->ant = no->ant;
-
-    free(no);
-    printf("\nRemovida a matricula >>%d<< da lista", mat); //mensagens.c
-    return 1;
 }
